@@ -1,5 +1,14 @@
 import Link from "next/link";
 
+const navLinks = [
+  { name: "About", href: "/about" },
+  { name: "Products", href: "/products" },
+  { name: "Custom Orders", href: "/custom-orders" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/contact" },
+];
+
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#ead8c7] bg-[#fffaf3]/90 backdrop-blur">
@@ -9,38 +18,30 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-6 text-sm font-medium text-[#6b5a50] md:flex">
-          <Link href="/about" className="hover:text-[#7b4f35]">
-            About
-          </Link>
-
-          <Link href="/products" className="hover:text-[#7b4f35]">
-            Products
-          </Link>
-
-          <Link href="/custom-orders" className="hover:text-[#7b4f35]">
-  Custom Orders
-</Link>
-
-          <Link href="/#gallery" className="hover:text-[#7b4f35]">
-            Gallery
-          </Link>
-
-          <Link href="/blog" className="hover:text-[#7b4f35]">
-            Blog
-          </Link>
-
-          <Link href="/contact" className="hover:text-[#7b4f35]">
-  Contact
-</Link>
+          {navLinks.map((link) => (
+            <Link key={link.name} href={link.href} className="hover:text-[#7b4f35]">
+              {link.name}
+            </Link>
+          ))}
         </div>
 
         <Link
-         href="/contact"
+          href="/contact"
           className="rounded-full bg-[#7b4f35] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#5f3c28]"
         >
           Order
         </Link>
       </nav>
+
+      <div className="border-t border-[#ead8c7] px-6 py-3 md:hidden">
+        <div className="flex gap-5 overflow-x-auto text-sm font-medium text-[#6b5a50]">
+          {navLinks.map((link) => (
+            <Link key={link.name} href={link.href} className="shrink-0 hover:text-[#7b4f35]">
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      </div>
     </header>
   );
 }
