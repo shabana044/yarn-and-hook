@@ -1,4 +1,6 @@
 import CollectionCard from "@/components/CollectionCard";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { blogPosts } from "@/data/blogPosts";
 
@@ -216,6 +218,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+            <ContactSection />
+
+      <Footer />
     </main>
   );
 }
