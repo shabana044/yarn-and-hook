@@ -21,21 +21,21 @@ export default function Navbar() {
   Custom Orders
 </Link>
 
-          <Link href="/gallery" className="hover:text-[#7b4f35]">
-  Gallery
-</Link>
+          <Link href="/#gallery" className="hover:text-[#7b4f35]">
+            Gallery
+          </Link>
 
           <Link href="/blog" className="hover:text-[#7b4f35]">
             Blog
           </Link>
 
-          <Link href="/#contact" className="hover:text-[#7b4f35]">
-            Contact
-          </Link>
+          <Link href="/contact" className="hover:text-[#7b4f35]">
+  Contact
+</Link>
         </div>
 
         <Link
-          href="/#contact"
+         href="/contact"
           className="rounded-full bg-[#7b4f35] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#5f3c28]"
         >
           Order
