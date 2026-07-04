@@ -1,11 +1,9 @@
-export default function ContactSection() {
-  const whatsappNumber = "910000000000";
-  const whatsappMessage =
-    "Hi Yarn & Hook Studio, I would like to know more about placing a crochet order.";
+import { siteConfig } from "@/data/siteConfig";
 
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    whatsappMessage
-  )}`;
+export default function ContactSection() {
+  const whatsappLink = `https://wa.me/${
+    siteConfig.whatsappNumber
+  }?text=${encodeURIComponent(siteConfig.whatsappMessage)}`;
 
   return (
     <section id="contact" className="bg-[#f3e4d4] px-6 py-20">
@@ -36,7 +34,7 @@ export default function ContactSection() {
             </a>
 
             <a
-              href="https://www.instagram.com/yarnandhookstudio"
+              href={siteConfig.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-[#7b4f35] px-6 py-3 text-center text-sm font-semibold text-[#7b4f35] transition hover:bg-[#fffaf3]"
