@@ -39,9 +39,44 @@ export default function Home() {
             Order on WhatsApp
           </a>
         </div>
+      
+            </section>
+
+      {/* Why Choose Us Section */}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="rounded-3xl border border-[#ead8c7] bg-white p-6 text-center shadow-sm">
+            <p className="text-4xl">🧵</p>
+            <h2 className="mt-4 text-xl font-bold">Made by Hand</h2>
+            <p className="mt-3 leading-7 text-[#6b5a50]">
+              Every piece is slowly handmade with care, patience, and attention
+              to small details.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-[#ead8c7] bg-white p-6 text-center shadow-sm">
+            <p className="text-4xl">🎨</p>
+            <h2 className="mt-4 text-xl font-bold">Custom Colors</h2>
+            <p className="mt-3 leading-7 text-[#6b5a50]">
+              Choose colors, sizes, and styles based on your personal taste or
+              gifting idea.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-[#ead8c7] bg-white p-6 text-center shadow-sm">
+            <p className="text-4xl">🎁</p>
+            <h2 className="mt-4 text-xl font-bold">Perfect for Gifting</h2>
+            <p className="mt-3 leading-7 text-[#6b5a50]">
+              Handmade crochet pieces feel personal, thoughtful, warm, and
+              special.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Collections Section */}
+
+     
       <section id="collections" className="mx-auto max-w-6xl px-6 py-20">
         <div className="text-center">
           <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#a67c52]">
@@ -215,6 +250,61 @@ export default function Home() {
                 </a>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+            {/* FAQ Section */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="text-center">
+          <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#a67c52]">
+            FAQ
+          </p>
+
+          <h2 className="mt-4 text-3xl font-bold md:text-4xl">
+            Common questions before ordering
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-2xl leading-7 text-[#6b5a50]">
+            Here are a few things customers usually want to know before placing
+            a handmade crochet order.
+          </p>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-3xl space-y-4">
+          <div className="rounded-3xl border border-[#ead8c7] bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-bold">Can I choose the color?</h3>
+            <p className="mt-3 leading-7 text-[#6b5a50]">
+              Yes. You can share your preferred color, and we will confirm based
+              on yarn availability.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-[#ead8c7] bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-bold">
+              How long does a custom order take?
+            </h3>
+            <p className="mt-3 leading-7 text-[#6b5a50]">
+              Making time depends on the product size, design, yarn
+              availability, and current order queue.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-[#ead8c7] bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-bold">
+              Can I send a reference photo?
+            </h3>
+            <p className="mt-3 leading-7 text-[#6b5a50]">
+              Yes. Reference photos are helpful. We will check if the design can
+              be made in crochet before confirming.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-[#ead8c7] bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-bold">How do I place an order?</h3>
+            <p className="mt-3 leading-7 text-[#6b5a50]">
+              You can message through WhatsApp or Instagram with your product
+              idea, color, size, and delivery details.
+            </p>
           </div>
         </div>
       </section>
