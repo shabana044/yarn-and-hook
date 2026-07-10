@@ -100,11 +100,11 @@ export default function ProductList() {
               </p>
 
               <a
-                href="/contact"
-                className="rounded-full bg-[#7b4f35] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#5f3c28]"
-              >
-                Ask to Order
-              </a>
+  href={`/order/${product.id}`}
+  className="rounded-full bg-[#7b4f35] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#5f3c28]"
+>
+  Order
+</a>
             </div>
           </div>
         </article>
