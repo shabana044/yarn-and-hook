@@ -62,6 +62,7 @@ export default function AdminPage() {
         {!loading && !userEmail && (
           <div className="mt-8 rounded-3xl border border-[#ead8c7] bg-white p-8 shadow-sm">
             <h2 className="text-2xl font-bold">Please login first</h2>
+
             <p className="mt-3 leading-7 text-[#6b5a50]">
               You need to login before accessing the admin dashboard.
             </p>
@@ -78,6 +79,7 @@ export default function AdminPage() {
         {!loading && userEmail && !isAdmin && (
           <div className="mt-8 rounded-3xl border border-red-100 bg-red-50 p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-red-700">Access denied</h2>
+
             <p className="mt-3 leading-7 text-red-600">
               This page is only for the Yarn & Hook Studio admin.
             </p>
@@ -93,20 +95,27 @@ export default function AdminPage() {
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               <div className="rounded-3xl border border-[#ead8c7] bg-white p-8 shadow-sm">
                 <h2 className="text-2xl font-bold">Manage Products</h2>
+
                 <p className="mt-3 leading-7 text-[#6b5a50]">
                   Add, edit, hide, or delete crochet products from your website.
                 </p>
-                <p className="mt-6 text-sm font-semibold text-[#a67c52]">
-                  Coming next
-                </p>
+
+                <Link
+                  href="/admin/products"
+                  className="mt-6 inline-block rounded-full bg-[#7b4f35] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#5f3c28]"
+                >
+                  Open Products
+                </Link>
               </div>
 
               <div className="rounded-3xl border border-[#ead8c7] bg-white p-8 shadow-sm">
                 <h2 className="text-2xl font-bold">View Orders</h2>
+
                 <p className="mt-3 leading-7 text-[#6b5a50]">
                   See customer order requests, phone numbers, notes, and order
                   status.
                 </p>
+
                 <p className="mt-6 text-sm font-semibold text-[#a67c52]">
                   Coming next
                 </p>
