@@ -1,3 +1,4 @@
+import AuthLinks from "@/components/AuthLinks";
 import Link from "next/link";
 
 const navLinks = [
@@ -12,7 +13,7 @@ const navLinks = [
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#ead8c7] bg-[#fffaf3]/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <Link href="/" className="text-lg font-bold tracking-wide text-[#3b2f2f]">
           Yarn & Hook Studio
         </Link>
@@ -25,12 +26,20 @@ export default function Navbar() {
           ))}
         </div>
 
-        <Link
-          href="/contact"
-          className="rounded-full bg-[#7b4f35] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#5f3c28]"
-        >
-          Order
-        </Link>
+        <div className="hidden items-center gap-4 md:flex">
+          <AuthLinks />
+
+          <Link
+            href="/contact"
+            className="rounded-full bg-[#7b4f35] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#5f3c28]"
+          >
+            Order
+          </Link>
+        </div>
+
+        <div className="md:hidden">
+          <AuthLinks />
+        </div>
       </nav>
 
       <div className="border-t border-[#ead8c7] px-6 py-3 md:hidden">
