@@ -289,11 +289,13 @@ export default function AdminProductsPage() {
                     className="rounded-2xl border border-[#ead8c7] bg-[#fffaf3] p-5"
                   >
                     {product.image_url && (
-                      <img
-                        src={product.image_url}
-                        alt={product.name}
-                        className="mb-4 h-48 w-full rounded-2xl object-cover"
-                      />
+                      <div className="mb-4 flex aspect-[4/5] w-full items-center justify-center rounded-2xl bg-[#f3e4d4]">
+                        <img
+                          src={product.image_url}
+                          alt={product.name}
+                          className="h-full w-full object-contain p-3"
+                        />
+                      </div>
                     )}
 
                     <div className="flex items-start justify-between gap-4">
