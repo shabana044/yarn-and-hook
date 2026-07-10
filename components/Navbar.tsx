@@ -7,6 +7,7 @@ const navLinks = [
   { name: "Custom Orders", href: "/custom-orders" },
   { name: "Gallery", href: "/gallery" },
   { name: "Blog", href: "/blog" },
+  { name: "My Orders", href: "/my-orders" },
   { name: "Contact", href: "/contact" },
 ];
 
