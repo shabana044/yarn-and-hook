@@ -116,9 +116,12 @@ export default function AdminPage() {
                   status.
                 </p>
 
-                <p className="mt-6 text-sm font-semibold text-[#a67c52]">
-                  Coming next
-                </p>
+                <Link
+  href="/admin/orders"
+  className="mt-6 inline-block rounded-full bg-[#7b4f35] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#5f3c28]"
+>
+  Open Orders
+</Link>
               </div>
             </div>
           </div>
