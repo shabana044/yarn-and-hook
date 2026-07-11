@@ -134,7 +134,52 @@ export default function AdminProductsPage() {
 
     await loadProducts();
   }
+async function toggleProductAvailability(product: Product) {
+  setMessage("");
+  setError("");
 
+  const { error } = await supabase
+    .from("products")
+    .update({ is_available: !product.is_available })
+    .eq("id", product.id);
+
+  if (error) {
+    setError(error.message);
+    return;
+  }
+
+  setMessage(
+    product.is_available
+      ? "Product hidden from website."
+      : "Product shown on website."
+  );
+
+  await loadProducts();
+}
+
+async function deleteProduct(productId: string) {
+  const confirmDelete = window.confirm(
+    "Are you sure you want to delete this product?"
+  );
+
+  if (!confirmDelete) return;
+
+  setMessage("");
+  setError("");
+
+  const { error } = await supabase
+    .from("products")
+    .delete()
+    .eq("id", productId);
+
+  if (error) {
+    setError(error.message);
+    return;
+  }
+
+  setMessage("Product deleted successfully.");
+  await loadProducts();
+}
   return (
     <main className="min-h-screen bg-[#fffaf3] text-[#3b2f2f]">
       <Navbar />
@@ -315,9 +360,23 @@ export default function AdminProductsPage() {
                       {product.description}
                     </p>
 
-                    <p className="mt-3 text-sm font-semibold">
-                      {product.is_available ? "Available" : "Hidden"}
-                    </p>
+                    <div className="mt-4 flex flex-wrap gap-3">
+  <button
+    type="button"
+    onClick={() => toggleProductAvailability(product)}
+    className="rounded-full border border-[#7b4f35] px-4 py-2 text-sm font-semibold text-[#7b4f35] transition hover:bg-[#f3e4d4]"
+  >
+    {product.is_available ? "Hide Product" : "Show Product"}
+  </button>
+
+  <button
+    type="button"
+    onClick={() => deleteProduct(product.id)}
+    className="rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700"
+  >
+    Delete
+  </button>
+</div>
                   </div>
                 ))}
               </div>

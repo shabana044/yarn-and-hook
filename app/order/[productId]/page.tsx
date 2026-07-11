@@ -30,6 +30,14 @@ export default function OrderPage() {
   const [quantity, setQuantity] = useState("1");
   const [notes, setNotes] = useState("");
 
+  const [addressLine, setAddressLine] = useState("");
+  const [city, setCity] = useState("");
+  const [district, setDistrict] = useState("");
+  const [pincode, setPincode] = useState("");
+  const [landmark, setLandmark] = useState("");
+  const [deliveryMethod, setDeliveryMethod] = useState("delivery");
+  const [paymentMethod, setPaymentMethod] = useState("discuss_later");
+
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
@@ -92,6 +100,14 @@ export default function OrderPage() {
       instagram_handle: instagramHandle,
       quantity: Number(quantity),
       notes,
+      address_line: addressLine,
+      city,
+      district,
+      pincode,
+      landmark,
+      delivery_method: deliveryMethod,
+      payment_method: paymentMethod,
+      payment_status: "not_requested",
       status: "pending",
     });
 
@@ -100,11 +116,21 @@ export default function OrderPage() {
       return;
     }
 
-    setMessage("Order request submitted successfully.");
+    setMessage(
+      "Order request submitted successfully. Payment is not required now. We will confirm availability and final price first."
+    );
+
     setPhone("");
     setInstagramHandle("");
     setQuantity("1");
     setNotes("");
+    setAddressLine("");
+    setCity("");
+    setDistrict("");
+    setPincode("");
+    setLandmark("");
+    setDeliveryMethod("delivery");
+    setPaymentMethod("discuss_later");
   }
 
   return (
@@ -141,12 +167,21 @@ export default function OrderPage() {
               </h1>
 
               <p className="mt-4 text-xl font-bold text-[#7b4f35]">
-                ₹{product.price}
+                Starting from ₹{product.price}
               </p>
 
               <p className="mt-4 leading-8 text-[#6b5a50]">
                 {product.description}
               </p>
+
+              <div className="mt-6 rounded-3xl border border-[#ead8c7] bg-white p-6 shadow-sm">
+                <h2 className="text-xl font-bold">Payment note</h2>
+                <p className="mt-3 leading-7 text-[#6b5a50]">
+                  You do not need to pay now. Submit your order request first.
+                  We will confirm yarn availability, making time, delivery
+                  possibility, and final price before requesting payment.
+                </p>
+              </div>
 
               {product.image_url && (
                 <div className="mt-8 flex aspect-[4/5] w-full items-center justify-center rounded-3xl bg-[#f3e4d4]">
@@ -194,6 +229,7 @@ export default function OrderPage() {
                     <label className="text-sm font-semibold">Phone</label>
                     <input
                       type="tel"
+                      required
                       value={phone}
                       onChange={(event) => setPhone(event.target.value)}
                       className="mt-2 w-full rounded-2xl border border-[#ead8c7] px-4 py-3 outline-none focus:border-[#7b4f35]"
@@ -226,6 +262,101 @@ export default function OrderPage() {
                       onChange={(event) => setQuantity(event.target.value)}
                       className="mt-2 w-full rounded-2xl border border-[#ead8c7] px-4 py-3 outline-none focus:border-[#7b4f35]"
                     />
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-semibold">
+                      Delivery Method
+                    </label>
+                    <select
+                      value={deliveryMethod}
+                      onChange={(event) =>
+                        setDeliveryMethod(event.target.value)
+                      }
+                      className="mt-2 w-full rounded-2xl border border-[#ead8c7] bg-white px-4 py-3 outline-none focus:border-[#7b4f35]"
+                    >
+                      <option value="delivery">Delivery</option>
+                      <option value="pickup">Pickup</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-semibold">
+                      Full Address
+                    </label>
+                    <textarea
+                      required={deliveryMethod === "delivery"}
+                      value={addressLine}
+                      onChange={(event) => setAddressLine(event.target.value)}
+                      className="mt-2 min-h-24 w-full rounded-2xl border border-[#ead8c7] px-4 py-3 outline-none focus:border-[#7b4f35]"
+                      placeholder="House name, street, area"
+                    />
+                  </div>
+
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <label className="text-sm font-semibold">City / Place</label>
+                      <input
+                        type="text"
+                        required={deliveryMethod === "delivery"}
+                        value={city}
+                        onChange={(event) => setCity(event.target.value)}
+                        className="mt-2 w-full rounded-2xl border border-[#ead8c7] px-4 py-3 outline-none focus:border-[#7b4f35]"
+                        placeholder="Kochi"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="text-sm font-semibold">District</label>
+                      <input
+                        type="text"
+                        required={deliveryMethod === "delivery"}
+                        value={district}
+                        onChange={(event) => setDistrict(event.target.value)}
+                        className="mt-2 w-full rounded-2xl border border-[#ead8c7] px-4 py-3 outline-none focus:border-[#7b4f35]"
+                        placeholder="Ernakulam"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <label className="text-sm font-semibold">Pincode</label>
+                      <input
+                        type="text"
+                        required={deliveryMethod === "delivery"}
+                        value={pincode}
+                        onChange={(event) => setPincode(event.target.value)}
+                        className="mt-2 w-full rounded-2xl border border-[#ead8c7] px-4 py-3 outline-none focus:border-[#7b4f35]"
+                        placeholder="682xxx"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="text-sm font-semibold">Landmark</label>
+                      <input
+                        type="text"
+                        value={landmark}
+                        onChange={(event) => setLandmark(event.target.value)}
+                        className="mt-2 w-full rounded-2xl border border-[#ead8c7] px-4 py-3 outline-none focus:border-[#7b4f35]"
+                        placeholder="Near..."
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-semibold">
+                      Preferred Payment Method
+                    </label>
+                    <select
+                      value={paymentMethod}
+                      onChange={(event) => setPaymentMethod(event.target.value)}
+                      className="mt-2 w-full rounded-2xl border border-[#ead8c7] bg-white px-4 py-3 outline-none focus:border-[#7b4f35]"
+                    >
+                      <option value="discuss_later">Discuss later</option>
+                      <option value="upi">UPI after confirmation</option>
+                      <option value="cash_on_delivery">Cash on delivery</option>
+                    </select>
                   </div>
 
                   <div>
