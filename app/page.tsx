@@ -43,77 +43,98 @@ export default function Home() {
             </section>
 
       {/* Why Choose Us Section */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-3xl border border-[#ead8c7] bg-white p-6 text-center shadow-sm">
-            <p className="text-4xl">🧵</p>
-            <h2 className="mt-4 text-xl font-bold">Made by Hand</h2>
-            <p className="mt-3 leading-7 text-[#6b5a50]">
-              Every piece is slowly handmade with care, patience, and attention
-              to small details.
-            </p>
-          </div>
+     <section className="mx-auto max-w-6xl px-6 py-16">
+  <div className="grid gap-6 md:grid-cols-3">
+    <div className="rounded-3xl border border-[#ead8c7] bg-white p-6 text-center shadow-sm">
+      <div className="mx-auto h-28 w-28 overflow-hidden rounded-full bg-[#f3e4d4]">
+        <img
+          src="/images/made-by-hand.jpg"
+          alt="Handmade crochet work"
+          className="h-full w-full object-cover"
+        />
+      </div>
 
-          <div className="rounded-3xl border border-[#ead8c7] bg-white p-6 text-center shadow-sm">
-            <p className="text-4xl">🎨</p>
-            <h2 className="mt-4 text-xl font-bold">Custom Colors</h2>
-            <p className="mt-3 leading-7 text-[#6b5a50]">
-              Choose colors, sizes, and styles based on your personal taste or
-              gifting idea.
-            </p>
-          </div>
+      <h2 className="mt-4 text-xl font-bold">Made by Hand</h2>
+      <p className="mt-3 leading-7 text-[#6b5a50]">
+        Every piece is slowly handmade with care, patience, and attention
+        to small details.
+      </p>
+    </div>
 
-          <div className="rounded-3xl border border-[#ead8c7] bg-white p-6 text-center shadow-sm">
-            <p className="text-4xl">🎁</p>
-            <h2 className="mt-4 text-xl font-bold">Perfect for Gifting</h2>
-            <p className="mt-3 leading-7 text-[#6b5a50]">
-              Handmade crochet pieces feel personal, thoughtful, warm, and
-              special.
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="rounded-3xl border border-[#ead8c7] bg-white p-6 text-center shadow-sm">
+      <div className="mx-auto h-28 w-28 overflow-hidden rounded-full bg-[#f3e4d4]">
+        <img
+          src="/images/custom-colors.jpg"
+          alt="Crochet yarn colors"
+          className="h-full w-full object-cover"
+        />
+      </div>
+
+      <h2 className="mt-4 text-xl font-bold">Custom Colors</h2>
+      <p className="mt-3 leading-7 text-[#6b5a50]">
+        Choose colors, sizes, and styles based on your personal taste or
+        gifting idea.
+      </p>
+    </div>
+
+    <div className="rounded-3xl border border-[#ead8c7] bg-white p-6 text-center shadow-sm">
+      <div className="mx-auto h-28 w-28 overflow-hidden rounded-full bg-[#f3e4d4]">
+        <img
+          src="/images/gifting.jpg"
+          alt="Handmade crochet gift"
+          className="h-full w-full object-cover"
+        />
+      </div>
+
+      <h2 className="mt-4 text-xl font-bold">Perfect for Gifting</h2>
+      <p className="mt-3 leading-7 text-[#6b5a50]">
+        Handmade crochet pieces feel personal, thoughtful, warm, and
+        special.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* Collections Section */}
 
      
       <section id="collections" className="mx-auto max-w-6xl px-6 py-20">
-        <div className="text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#a67c52]">
-            Our Collections
-          </p>
+  <div className="text-center">
+    <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#a67c52]">
+      Our Collections
+    </p>
 
-          <h2 className="mt-4 text-3xl font-bold md:text-4xl">
-            Handmade pieces for every cozy moment
-          </h2>
+    <h2 className="mt-4 text-3xl font-bold md:text-4xl">
+      Handmade pieces for every cozy moment
+    </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl leading-7 text-[#6b5a50]">
-            Explore soft crochet creations designed for gifting, styling, and
-            personal comfort. Each piece can be customized based on color, size,
-            and yarn preference.
-          </p>
-        </div>
+    <p className="mx-auto mt-4 max-w-2xl leading-7 text-[#6b5a50]">
+      Explore soft crochet creations designed for gifting, styling, and
+      personal comfort. Each piece can be customized based on color, size,
+      and yarn preference.
+    </p>
+  </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          <CollectionCard
-            icon="🧶"
-            title="Crochet Bags"
-            description="Stylish handmade bags for casual outings, college looks, and gifting."
-          />
+  <div className="mt-12 grid gap-6 md:grid-cols-3">
+    <CollectionCard
+      image="/images/crochet-bags.jpg"
+      title="Crochet Bags"
+      description="Stylish handmade bags for casual outings, college looks, and gifting."
+    />
 
-          <CollectionCard
-            icon="🌸"
-            title="Crochet Accessories"
-            description="Cute bows, keychains, flowers, scrunchies, and small handmade details."
-          />
+    <CollectionCard
+      image="/images/accessories.jpg"
+      title="Crochet Accessories"
+      description="Cute bows, keychains, flowers, scrunchies, and small handmade details."
+    />
 
-          <CollectionCard
-            icon="🧣"
-            title="Cozy Wearables"
-            description="Soft scarves, beanies, tops, and warm handmade pieces made to order."
-          />
-        </div>
-      </section>
+    <CollectionCard
+      image="/images/wearables.jpg"
+      title="Cozy Wearables"
+      description="Soft scarves, beanies, tops, and warm handmade pieces made to order."
+    />
+  </div>
+</section>
 
       {/* Custom Orders Section */}
       <section id="custom-orders" className="bg-[#f3e4d4] px-6 py-20">
@@ -166,47 +187,71 @@ export default function Home() {
 
       {/* Gallery Section */}
       <section id="gallery" className="mx-auto max-w-6xl px-6 py-20">
-        <div className="text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#a67c52]">
-            Gallery
-          </p>
+  <div className="text-center">
+    <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#a67c52]">
+      Gallery
+    </p>
 
-          <h2 className="mt-4 text-3xl font-bold md:text-4xl">
-            A little look into our handmade world
-          </h2>
+    <h2 className="mt-4 text-3xl font-bold md:text-4xl">
+      A little look into our handmade world
+    </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl leading-7 text-[#6b5a50]">
-            From yarn textures to finished crochet pieces, our gallery shows the
-            softness, colors, and small handmade details behind every creation.
-          </p>
-        </div>
+    <p className="mx-auto mt-4 max-w-2xl leading-7 text-[#6b5a50]">
+      From yarn textures to finished crochet pieces, our gallery shows the
+      softness, colors, and small handmade details behind every creation.
+    </p>
+  </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          <div className="flex h-64 items-center justify-center rounded-3xl bg-[#f3e4d4] text-5xl shadow-sm">
-            🧶
-          </div>
+  <div className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+    <div className="h-64 overflow-hidden rounded-3xl bg-[#f3e4d4] shadow-sm">
+      <img
+        src="/images/custom-colors.jpg"
+        alt="Yarn colors and textures"
+        className="h-full w-full object-cover"
+      />
+    </div>
 
-          <div className="flex h-64 items-center justify-center rounded-3xl bg-[#ead8c7] text-5xl shadow-sm">
-            👜
-          </div>
+    <div className="h-64 overflow-hidden rounded-3xl bg-[#ead8c7] shadow-sm">
+      <img
+        src="/images/crochet-bags.jpg"
+        alt="Crochet bag"
+        className="h-full w-full object-cover"
+      />
+    </div>
 
-          <div className="flex h-64 items-center justify-center rounded-3xl bg-[#f3e4d4] text-5xl shadow-sm">
-            🌸
-          </div>
+    <div className="h-64 overflow-hidden rounded-3xl bg-[#f3e4d4] shadow-sm">
+      <img
+        src="/images/accessories.jpg"
+        alt="Crochet accessories"
+        className="h-full w-full object-cover"
+      />
+    </div>
 
-          <div className="flex h-64 items-center justify-center rounded-3xl bg-[#ead8c7] text-5xl shadow-sm">
-            🧣
-          </div>
+    <div className="h-64 overflow-hidden rounded-3xl bg-[#ead8c7] shadow-sm">
+      <img
+        src="/images/wearables.jpg"
+        alt="Crochet wearable"
+        className="h-full w-full object-cover"
+      />
+    </div>
 
-          <div className="flex h-64 items-center justify-center rounded-3xl bg-[#f3e4d4] text-5xl shadow-sm">
-            🎁
-          </div>
+    <div className="h-64 overflow-hidden rounded-3xl bg-[#f3e4d4] shadow-sm">
+      <img
+        src="/images/gifting.jpg"
+        alt="Crochet gift piece"
+        className="h-full w-full object-cover"
+      />
+    </div>
 
-          <div className="flex h-64 items-center justify-center rounded-3xl bg-[#ead8c7] text-5xl shadow-sm">
-            🤍
-          </div>
-        </div>
-      </section>
+    <div className="h-64 overflow-hidden rounded-3xl bg-[#ead8c7] shadow-sm">
+      <img
+        src="/images/made-by-hand.jpg"
+        alt="Custom handmade crochet work"
+        className="h-full w-full object-cover"
+      />
+    </div>
+  </div>
+</section>
 
       {/* Blog Section */}
       <section id="blog" className="bg-white px-6 py-20">

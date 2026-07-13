@@ -39,10 +39,14 @@ export default function AboutPage() {
           </div>
 
           <div className="rounded-3xl bg-[#f3e4d4] p-8 shadow-sm">
-            <div className="flex h-80 items-center justify-center rounded-3xl bg-[#ead8c7] text-7xl">
-              🧶
-            </div>
-          </div>
+  <div className="h-80 overflow-hidden rounded-3xl bg-[#ead8c7]">
+    <img
+      src="/images/made-by-hand.jpg"
+      alt="Handmade crochet work"
+      className="h-full w-full object-cover"
+    />
+  </div>
+</div>
         </div>
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">

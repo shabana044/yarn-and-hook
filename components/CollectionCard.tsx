@@ -1,23 +1,29 @@
 type CollectionCardProps = {
-  icon: string;
+  image: string;
   title: string;
   description: string;
 };
 
 export default function CollectionCard({
-  icon,
+  image,
   title,
   description,
 }: CollectionCardProps) {
   return (
-    <div className="rounded-3xl border border-[#ead8c7] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-      <div className="mb-5 flex h-48 items-center justify-center rounded-2xl bg-[#f3e4d4] text-5xl">
-        {icon}
+    <div className="overflow-hidden rounded-3xl border border-[#ead8c7] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+      <div className="flex h-56 items-center justify-center bg-[#f3e4d4]">
+        <img
+          src={image}
+          alt={title}
+          className="h-full w-full object-cover"
+        />
       </div>
 
-      <h3 className="text-xl font-bold">{title}</h3>
+      <div className="p-6">
+        <h3 className="text-xl font-bold">{title}</h3>
 
-      <p className="mt-3 leading-7 text-[#6b5a50]">{description}</p>
+        <p className="mt-3 leading-7 text-[#6b5a50]">{description}</p>
+      </div>
     </div>
   );
 }

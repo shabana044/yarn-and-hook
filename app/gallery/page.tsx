@@ -3,32 +3,32 @@ import Navbar from "@/components/Navbar";
 
 const galleryItems = [
   {
-    icon: "🧶",
+    image: "/images/custom-colors.jpg",
     title: "Yarn Textures",
     description: "Soft yarn colors and textures used for handmade pieces.",
   },
   {
-    icon: "👜",
+    image: "/images/crochet-bags.jpg",
     title: "Crochet Bags",
     description: "Handmade crochet bags for styling and gifting.",
   },
   {
-    icon: "🌸",
+    image: "/images/accessories.jpg",
     title: "Floral Details",
     description: "Cute crochet flowers and small decorative pieces.",
   },
   {
-    icon: "🧣",
+    image: "/images/wearables.jpg",
     title: "Cozy Wearables",
     description: "Soft scarves, beanies, and wearable crochet items.",
   },
   {
-    icon: "🎁",
+    image: "/images/gifting.jpg",
     title: "Gift Pieces",
     description: "Handmade pieces packed with care for special moments.",
   },
   {
-    icon: "🤍",
+    image: "/images/made-by-hand.jpg",
     title: "Custom Work",
     description: "Personalized crochet pieces based on customer ideas.",
   },
@@ -68,7 +68,11 @@ export default function GalleryPage() {
               className="overflow-hidden rounded-3xl border border-[#ead8c7] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
             >
               <div className="flex h-72 items-center justify-center bg-[#f3e4d4] text-6xl">
-                {item.icon}
+                <img
+  src={item.image}
+  alt={item.title}
+  className="h-full w-full object-cover"
+/>
               </div>
 
               <div className="p-6">
