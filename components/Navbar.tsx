@@ -15,9 +15,17 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#ead8c7] bg-[#fffaf3]/90 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
-        <Link href="/" className="text-lg font-bold tracking-wide text-[#3b2f2f]">
-          Yarn & Hook Studio
-        </Link>
+        <Link href="/" className="flex items-center gap-3">
+  <img
+    src="/images/logo.svg"
+    alt="Yarn & Hook Studio logo"
+    className="h-11 w-11 rounded-full object-contain"
+  />
+
+  <span className="text-lg font-bold tracking-wide text-[#3b2f2f]">
+    Yarn & Hook Studio
+  </span>
+</Link>
 
         <div className="hidden items-center gap-6 text-sm font-medium text-[#6b5a50] md:flex">
           {navLinks.map((link) => (
